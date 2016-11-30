@@ -24,8 +24,9 @@ $(function() {
     }
   });
 
-  var url = window.location;
+  var url = window.location.href;
   var element = $('ul.nav a').filter(function() {
+    console.log('this.href--->', this.href);
     return (this.href == url || url !== this.href && this.href.indexOf(url, 0) !== -1);
   }).addClass('active').parents('ul').addClass('in');
   if (element.is('li')) {
