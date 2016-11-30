@@ -26,7 +26,7 @@ $(function() {
 
   var url = window.location;
   var element = $('ul.nav a').filter(function() {
-    return this.href == url;
+    return (this.href == url || url !== this.href && this.href.indexOf(url, 0) !== -1);
   }).addClass('active').parents('ul').addClass('in');
   if (element.is('li')) {
     element.addClass('active');
